@@ -7,13 +7,8 @@ public class EvenDigits {
   static int evenDigits(int[] nums) {
     int numCount = 0;
     for (int a : nums) {
-      int temp = a;
-      int digitCount = 0;
-      while (temp > 0) {
-        temp /= 10;
-        digitCount++;
-      }
-      if (digitCount % 2 == 0) {
+      int temp = (int) (Math.log10(a)) + 1;
+      if (temp % 2 == 0) {
         numCount++;
       }
     }
@@ -22,3 +17,20 @@ public class EvenDigits {
   }
 
 }
+
+// https://leetcode.com/problems/find-numbers-with-even-number-of-digits/?envType=problem-list-v2&envId=array
+
+/*
+ * class Solution {
+ * public int findNumbers(int[] nums) {
+ * int numCount = 0;
+ * for (int a : nums) {
+ * int temp = (int) (Math.log10(a)) + 1;
+ * if (temp % 2 == 0) {
+ * numCount++;
+ * }
+ * }
+ * return numCount;
+ * }
+ * }
+ */
