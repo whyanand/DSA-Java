@@ -1,3 +1,5 @@
+package PS;
+
 import java.util.Scanner;
 
 public class SubtractProductAndSum {

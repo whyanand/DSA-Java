@@ -13,43 +13,21 @@ public class CeilingAndFloor {
 
     int s = 0;
     int e = arr.length - 1;
-    boolean isAsc = arr[s] < arr[e];
 
     while (s <= e) {
       int mid = s + (e - s) / 2;
 
-      if (arr[mid] == target) {
-        return arr[mid];
-      }
-
-      if (isAsc) {
-        if (target > arr[mid]) {
-          s = mid + 1;
-        } else {
-          e = mid - 1;
-        }
+      if (arr[mid] >= target) {
+        e = mid - 1;
       } else {
-        if (target < arr[mid]) {
-          s = mid + 1;
-        } else {
-          e = mid - 1;
-        }
+        s = mid + 1;
       }
     }
 
-    if (isAsc) {
-      if (s < arr.length) {
-        return arr[s];
-      } else {
-        return -1;
-      }
-    } else {
-      if (e >= 0) {
-        return arr[e];
-      } else {
-        return -1;
-      }
+    if (s < arr.length) {
+      return arr[s];
     }
+    return -1;
   }
 
   static int floor(int[] arr, int target) {
@@ -59,42 +37,21 @@ public class CeilingAndFloor {
 
     int s = 0;
     int e = arr.length - 1;
-    boolean isAsc = arr[s] < arr[e];
 
     while (s <= e) {
       int mid = s + (e - s) / 2;
 
-      if (arr[mid] == target) {
-        return arr[mid];
-      }
-
-      if (isAsc) {
-        if (target > arr[mid]) {
-          s = mid + 1;
-        } else {
-          e = mid - 1;
-        }
+      if (arr[mid] <= target) {
+        s = mid + 1;
       } else {
-        if (target < arr[mid]) {
-          s = mid + 1;
-        } else {
-          e = mid - 1;
-        }
+        e = mid - 1;
       }
     }
 
-    if (isAsc) {
-      if (e >= 0) {
-        return arr[e];
-      } else {
-        return -1;
-      }
-    } else {
-      if (s < arr.length) {
-        return arr[s];
-      } else {
-        return -1;
-      }
+    if (e >= 0) {
+      return arr[e];
     }
+    return -1;
   }
+
 }

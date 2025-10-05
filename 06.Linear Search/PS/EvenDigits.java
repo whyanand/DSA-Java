@@ -1,3 +1,5 @@
+package PS;
+
 public class EvenDigits {
   public static void main(String[] args) {
     int[] nums = { 1, 22, 333, 4444, 55555, 666666 };
