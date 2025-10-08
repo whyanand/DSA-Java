@@ -24,7 +24,7 @@ public class MissingNumber {
       }
     }
 
-    return arr.length;
+    return arr.length + 1;
   }
 
   static void swap(int[] arr, int index1, int index2) {
